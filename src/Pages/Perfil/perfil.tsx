@@ -105,7 +105,7 @@ export default function PerfilProfessor() {
 
     const checkEmailConfirmation = async () => {
       try {
-        setShowConfirmModal(true)
+        setShowConfirmEmailModal(true)
         const { data: { user }, error } = await supabase.auth.getUser();
         if (error) {
           console.error('Erro ao verificar confirmação do email:', error);
