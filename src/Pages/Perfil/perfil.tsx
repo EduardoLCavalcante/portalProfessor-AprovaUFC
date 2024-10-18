@@ -52,7 +52,7 @@ export default function PerfilProfessor() {
     fotoPerfil: "/logo.png"
   })
   const [novaInfo, setNovaInfo] = useState<ProfessorInfo>(ProfessorInfo)
-  const [showConfirmEmailModal, setShowConfirmEmailModal] = useState(true);
+  const [showConfirmEmailModal, setShowConfirmEmailModal] = useState(false);
 
 
   useEffect(() => {
@@ -105,6 +105,7 @@ export default function PerfilProfessor() {
 
     const checkEmailConfirmation = async () => {
       try {
+        setShowConfirmModal(true)
         const { data: { user }, error } = await supabase.auth.getUser();
         if (error) {
           console.error('Erro ao verificar confirmação do email:', error);
